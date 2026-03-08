@@ -460,75 +460,136 @@ header .container {
     transition: fill 0.3s;
 }
 
-/* Experience Section */
+/* Experience Section Upgrade */
 .timeline {
     position: relative;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding-right: 60px;
+    /* Space for line and icons */
 }
 
 .timeline::after {
     content: '';
     position: absolute;
-    width: 2px;
-    /* Thinner line */
-    background: var(--border-color);
-    top: 0;
-    bottom: 0;
-    right: 32px;
-    border-radius: 2px;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    top: 10px;
+    bottom: 10px;
+    right: 28.5px;
+    /* Center of the 60px padding minus half line width approx */
+    /* Exact center: (60px - icon_center_offset) - simpler to align with icon position */
+    border-radius: 10px;
+    opacity: 0.3;
 }
 
 .timeline-item {
-    padding: 30px;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     background: var(--card-bg);
-    border-radius: var(--radius);
+    border-radius: 20px;
+    padding: 35px 35px 35px 35px;
+    /* Adjusted padding */
     border: 1px solid var(--border-color);
     transition: var(--transition);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-    /* Very subtle default shadow */
+    box-shadow: var(--shadow);
+    width: calc(100% - 20px);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
 }
 
 .timeline-item:hover {
-    border-color: transparent;
+    transform: translateX(-10px);
     box-shadow: var(--hover-shadow);
-    transform: translateY(-5px);
+    border-color: var(--secondary-color);
 }
 
 .timeline-icon {
     position: absolute;
-    right: 8px;
-    /* Adjusted for alignment */
-    top: 25px;
-    width: 48px;
-    height: 48px;
-    background: var(--gradient-bg);
+    right: -52px;
+    /* (Padding 60px - IconHalfWidth 22px) = 38px from right edge? No, relative to item. */
+    /* If item is at 60px from right, and we want icon center at 30px from right. */
+    /* ItemRightEdge = 60px. CenterOfIconRelativeItem = -30px. IconRealRight = center - 22 = 8px? */
+    /* Let's be precise:
+       Timeline Padding Right: 60px.
+       Line right position: 30px.
+       Icon width: 44px. Icon half: 22px.
+       To center icon on line: Icon right edge = LineRight - IconHalf = 30 - 22 = 8px.
+       Since Item is at 60px from right, Icon 'right' offset from Item = 8 - 60 = -52px.
+    */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: var(--white);
+    border: 3px solid var(--primary-color);
     border-radius: 50%;
-    color: #fff;
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2;
-    box-shadow: 0 0 0 5px var(--bg-color);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.timeline::after {
+    right: 28.5px;
+    /* 30px center - 1.5px half-width */
+}
+
+
+.timeline-item:hover .timeline-icon {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .timeline-content h3 {
-    color: var(--dark-color);
-    font-weight: 700;
-    font-size: 1.25rem;
-    margin-bottom: 5px;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.timeline-content p {
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin: 0;
 }
 
 .timeline-content .location {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: var(--secondary-color);
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
+
+.timeline-content .location i {
+    font-size: 1rem;
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .timeline::after {
+    opacity: 0.2;
+}
+
+[data-theme="dark"] .timeline-icon {
+    background: var(--card-bg);
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .timeline-item:hover .timeline-icon {
+    background: var(--primary-color);
+}
+
 
 /* Education Section */
 .bg-light {
