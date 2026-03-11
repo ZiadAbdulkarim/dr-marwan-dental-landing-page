@@ -11,8 +11,8 @@
     --light-color: #f8f9fa;
     /* Very clean gray */
     --white: #ffffff;
-    --text-color: #5a6c7d;
-    /* Softer body text */
+    --text-color: #4a5a6a;
+    /* Darker for better contrast */
     --success-color: #25d366;
     --bg-color: #ffffff;
     --card-bg: #ffffff;
@@ -44,6 +44,10 @@
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     --hover-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     --shape-fill-color: #0d1117;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -101,7 +105,7 @@ img {
 }
 
 .section {
-    padding: 100px 0;
+    padding: 120px 0;
     /* More breathing room */
 }
 
@@ -650,8 +654,14 @@ header .container {
 /* Services Section */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
+}
+
+@media (min-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .service-card {
@@ -662,6 +672,10 @@ header .container {
     border: 1px solid var(--border-color);
     transition: var(--transition);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
 }
 
 .service-card:hover {
@@ -910,43 +924,48 @@ footer {
     font-weight: 700;
 }
 
-/* Fixed CTA - Updated */
-.fixed-call-btn {
+/* Fixed Actions Container */
+.fixed-actions {
     position: fixed;
-    bottom: 35px;
-    left: 35px;
-    /* Moved to left as requested */
-    right: auto;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+}
+
+.fixed-call-btn,
+.fixed-whatsapp-btn {
     background: var(--primary-color);
     color: #fff;
     border-radius: 50px;
-    /* Pill shape */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 16px 28px;
-    font-size: 1.1rem;
+    padding: 14px 25px;
+    font-size: 1rem;
     font-weight: 700;
-    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.4);
-    z-index: 999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transition: var(--transition);
-    animation: pulse 2s infinite;
+    animation: pulse-blue 2s infinite;
 }
 
-.fixed-call-btn i {
-    font-size: 1.3rem;
+.fixed-whatsapp-btn {
+    background: var(--success-color);
+    animation: pulse-green 2s infinite;
 }
 
-.fixed-call-btn:hover {
-    transform: scale(1.05);
-    /* Gentle scale */
-    background: #004494;
+.fixed-call-btn:hover,
+.fixed-whatsapp-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes pulse {
+@keyframes pulse-blue {
     0% {
-        box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.7);
+        box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.4);
     }
 
     70% {
@@ -955,6 +974,20 @@ footer {
 
     100% {
         box-shadow: 0 0 0 0 rgba(0, 86, 179, 0);
+    }
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
     }
 }
 
@@ -1087,20 +1120,29 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .fixed-call-btn {
-        padding: 12px;
+    .fixed-actions {
+        bottom: 20px;
+        left: 20px;
+        gap: 10px;
+    }
+
+    .fixed-call-btn,
+    .fixed-whatsapp-btn {
+        padding: 0;
         border-radius: 50%;
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
 
-    .fixed-call-btn span {
+    .fixed-call-btn span,
+    .fixed-whatsapp-btn span {
         display: none;
-        /* Hide text on mobile to save space */
     }
 
-    .fixed-call-btn i {
+    .fixed-call-btn i,
+    .fixed-whatsapp-btn i {
         margin: 0;
+        font-size: 1.4rem;
     }
 
     .section-title {
