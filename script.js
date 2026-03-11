@@ -21,6 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Also close for navbar links (if they exist in menu or overlapping logic)
+    document.querySelectorAll('.navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+        });
+    });
+
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!mobileNav.contains(e.target) && !hamburger.contains(e.target) && mobileNav.classList.contains('active')) {
@@ -53,23 +60,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navbar Active State on Scroll
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.navbar a');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 
     window.addEventListener('scroll', () => {
         let current = '';
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 150)) {
+            const sectionTop = section.offsetTop - 100; // Account for header
+            const sectionHeight = section.offsetHeight;
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
 
-        navItems.forEach(li => {
-            li.classList.remove('active');
-            if (li.getAttribute('href').includes(current)) {
-                li.classList.add('active');
-            }
-        });
+        // Special case for bottom of page
+        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 50) {
+            current = sections[sections.length - 1].getAttribute('id');
+        }
+
+        const updateActive = (links) => {
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        };
+
+        updateActive(navItems);
+        updateActive(mobileNavLinks);
     });
 
     // Dark Mode Toggle
