@@ -8,6 +8,7 @@
     <meta name="description"
         content="الدكتور مروان عبدالكريم زكريا لطب الفم والاسنان. خدمات متميزة، حشو، تبييض، تنظيف، وخلع. احجز موعدك الآن.">
     <!-- Google Fonts -->
+     <link rel="preload" as="image" href="assets/img-home.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap"
@@ -30,21 +31,22 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="#home" class="active">الرئيسية</a></li>
-                    <li><a href="#about">من أنا</a></li>
                     <li><a href="#services">الخدمات</a></li>
-                    <li><a href="#experience">الخبرات</a></li>
-                    <li><a href="#locations">العيادات</a></li>
+                    <li><a href="#why-us">لماذا نحن</a></li>
                     <li><a href="#reviews">أراء المرضى</a></li>
+                    <li><a href="#about">من أنا</a></li>
+                    <li><a href="#locations">العيادات</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <button id="theme-toggle" class="theme-btn" aria-label="تبديل الوضع">
+                <button id="theme-toggle" class="theme-btn" aria-label="تبديل وضع الألوان">
                     <i class="fa-solid fa-moon"></i>
                 </button>
                 <div class="header-cta">
-                    <a href="https://wa.me/+201151345884" class="btn btn-outline">تواصل معنا</a>
+                    <a href="https://wa.me/+201151345884" class="btn btn-outline"
+                        aria-label="تواصل معنا عبر واتساب">تواصل معنا</a>
                 </div>
-                <div class="hamburger">
+                <div class="hamburger" aria-label="فتح القائمة">
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
@@ -54,15 +56,15 @@
     <!-- Mobile Menu -->
     <div class="mobile-nav">
         <div class="mobile-nav-header">
-            <span class="close-menu"><i class="fa-solid fa-xmark"></i></span>
+            <span class="close-menu" aria-label="إغلاق القائمة"><i class="fa-solid fa-xmark"></i></span>
         </div>
         <ul>
             <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#about">من أنا</a></li>
             <li><a href="#services">الخدمات</a></li>
-            <li><a href="#experience">الخبرات</a></li>
-            <li><a href="#locations">العيادات</a></li>
+            <li><a href="#why-us">لماذا نحن</a></li>
             <li><a href="#reviews">أراء المرضى</a></li>
+            <li><a href="#about">من أنا</a></li>
+            <li><a href="#locations">العيادات</a></li>
         </ul>
     </div>
 
@@ -78,15 +80,17 @@
                     <br>بأني إليـك في الأوجـاعِ أقربْ
                 </p>
                 <div class="hero-btns">
-                    <a href="tel:+201151345884" class="btn btn-primary"><i class="fa-solid fa-phone"></i> اتصل الآن</a>
-                    <a href="https://wa.me/+201151345884" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i>
+                    <a href="tel:+201151345884" class="btn btn-primary" aria-label="اتصل بالطبيب الآن"><i
+                            class="fa-solid fa-phone"></i> اتصل الآن</a>
+                    <a href="https://wa.me/+201151345884" class="btn btn-whatsapp"
+                        aria-label="تواصل مع الطبيب عبر واتساب"><i class="fa-brands fa-whatsapp"></i>
                         واتساب</a>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="image-wrapper dynamic-blob">
                     <!-- Placeholder for Doctor's Image -->
-                    <img src="assets/img-home.jpg" alt="دكتور مروان عبدالكريم">
+                    <img src="assets/img-home.jpg" alt="دكتور مروان عبدالكريم في عيادته" loading="lazy">
                 </div>
             </div>
         </div>
@@ -97,62 +101,6 @@
                     d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
                     class="shape-fill"></path>
             </svg>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">خبراتي المهنية</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fa-solid fa-circle-check"></i></div>
-                    <div class="timeline-content">
-                        <h3>تدريب في مستشفى جامعة سفنكس</h3>
-                        <span class="location"><i class="fa-solid fa-location-dot"></i>أسيوط الجديدة</span>
-                        <p>اكتساب خبرات عملية أولية وتطبيقية في مختلف تخصصات طب الأسنان.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fa-solid fa-circle-check"></i></div>
-                    <div class="timeline-content">
-                        <h3>تدريب في مستشفى جامعة أسيوط</h3>
-                        <span class="location"><i class="fa-solid fa-location-dot"></i>أسيوط</span>
-                        <p>التعامل مع حالات متنوعة ومعقدة مما زاد من الكفاءة المهنية والسرعة في التشخيص.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fa-solid fa-circle-check"></i></div>
-                    <div class="timeline-content">
-                        <h3>العمل في عيادة الدكتور محمد عبداللطيف</h3>
-                        <span class="location"><i class="fa-solid fa-location-dot"></i>شارع السوق - أبنوب</span>
-                        <p>تقديم خدمات علاجية لطب الفم والاسنان ومتابعة حالات المرضى.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fa-solid fa-circle-check"></i></div>
-                    <div class="timeline-content">
-                        <h3>العمل في عيادة الإبتسامة</h3>
-                        <span class="location"><i class="fa-solid fa-location-dot"></i> المعابدة - أبنوب</span>
-                        <p>توفير رعاية متكاملة لمرضى الفم والاسنان.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">المؤهلات العلمية</h2>
-            <div class="education-card">
-                <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <div class="edu-info">
-                    <h3>خريج كلية الفم والأسنان</h3>
-                    <p>جامعة سفنكس</p>
-                    <span class="edu-badge">درجة البكالوريوس</span>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -205,6 +153,140 @@
         </div>
     </section>
 
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">لماذا تختار عيادتنا؟</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-microscope"></i></div>
+                    <h3>استخدام أحدث التقنيات</h3>
+                    <p>نستخدم أحدث الأجهزة والتقنيات في عالم طب الأسنان لضمان الراحة والدقة.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-pump-medical"></i></div>
+                    <h3>تعقيم كامل للأدوات</h3>
+                    <p>نلتزم بأعلى معايير التعقيم والنظافة لضمان سلامة وصحة جميع مرضانا.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>اهتمام براحة المريض</h3>
+                    <p>نهتم بكافة التفاصيل التي تضمن راحة المريض النفسية والجسدية خلال فترة العلاج.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <h3>متابعة بعد العلاج</h3>
+                    <p>نحرص على متابعة حالة المريض بعد الزيارة للتأكد من نجاح العلاج وسلامته.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section">
+        <div class="container">
+            <h2 class="section-title">آراء المرضى</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"د / مروان عبدالكريم زكريا ما شاء الله اللهم بارك دكتور شاطر وايده تتلف ف
+                        حرير وعنده ضمير وده أهم شيء."</p>
+                    <h4 class="reviewer-name">- عبدالرحمن عبدالمحسن</h4>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"عيادة نظيفة ومعاملة راقية جداً من الدكتور مروان، شكراً."</p>
+                    <h4 class="reviewer-name">- محمد عادل</h4>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"تجربة ممتازة، الدكتور فاهم شغله كويس جداً وباله طويل."</p>
+                    <h4 class="reviewer-name">- خالد حسني</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">من أنا</h2>
+            <div class="about-wrapper">
+                <div class="about-image">
+                    <div class="image-wrapper dynamic-blob">
+                        <img src="assets/img-about.jpg" alt="دكتور مروان عبدالكريم أثناء الكشف الطبي" loading="lazy">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span class="subtitle">نبذة عن الطبيب</span>
+                    <h2>د. مروان عبدالكريم</h2>
+                    <p>طبيب فم وأسنان شغوف بتقديم أفضل رعاية صحية لمرضاه. خبرة واسعة في التشخيص والعلاج مع التركيز على
+                        راحة المريض النفسية والجسدية.</p>
+                    <ul class="certificates">
+                        <li><i class="fa-solid fa-certificate"></i> شهادات معتمدة في طب الأسنان</li>
+                        <li><i class="fa-solid fa-award"></i> خبرة عملية في مستشفيات جامعية</li>
+                        <li><i class="fa-solid fa-check-double"></i> استخدام أحدث التقنيات العلاجية</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience & Education Merged -->
+            <div class="about-details" style="margin-top: 80px;">
+                <div class="about-education" style="margin-bottom: 60px;">
+                    <h3 style="text-align: center; margin-bottom: 40px; color: var(--primary-color);">المؤهلات العلمية
+                    </h3>
+                    <div class="education-card">
+                        <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="edu-info">
+                            <h3>خريج كلية الفم والأسنان</h3>
+                            <p>جامعة سفنكس</p>
+                            <span class="edu-badge">درجة البكالوريوس</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-experience">
+                    <h3 style="text-align: center; margin-bottom: 40px; color: var(--primary-color);">الخبرة المهنية
+                    </h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <div class="timeline-content">
+                                <h3>تدريب في مستشفى جامعة سفنكس</h3>
+                                <span class="location"><i class="fa-solid fa-location-dot"></i>أسيوط الجديدة</span>
+                                <p>اكتساب خبرات عملية أولية وتطبيقية في مختلف تخصصات طب الأسنان.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <div class="timeline-content">
+                                <h3>تدريب في مستشفى جامعة أسيوط</h3>
+                                <span class="location"><i class="fa-solid fa-location-dot"></i>أسيوط</span>
+                                <p>التعامل مع حالات متنوعة ومعقدة مما زاد من الكفاءة المهنية والسرعة في التشخيص.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <div class="timeline-content">
+                                <h3>العمل في عيادة الدكتور محمد عبداللطيف</h3>
+                                <span class="location"><i class="fa-solid fa-location-dot"></i>شارع السوق - أبنوب</span>
+                                <p>تقديم خدمات علاجية لطب الفم والاسنان ومتابعة حالات المرضى.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <div class="timeline-content">
+                                <h3>العمل في عيادة الإبتسامة</h3>
+                                <span class="location"><i class="fa-solid fa-location-dot"></i> المعابدة - أبنوب</span>
+                                <p>توفير رعاية متكاملة لمرضى الفم والاسنان.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Locations & Hours Section -->
     <section id="locations" class="section bg-blue">
         <div class="container">
@@ -219,7 +301,8 @@
                         <p><i class="fa-regular fa-clock"></i> <strong>يومياً:</strong> 8:00 صباحاً - 6:00 مساءً</p>
                         <p class="closed"><i class="fa-solid fa-ban"></i> ماعدا الجمعة</p>
                     </div>
-                    <a href="#" class="btn btn-small">الموقع على الخريطة</a>
+                    <a href="https://maps.app.goo.gl/BoC6h8RY2GAPszfH9" class="btn btn-small" target="_blank">الموقع على
+                        الخريطة</a>
                 </div>
                 <!-- Clinic 2 -->
                 <div class="location-card">
@@ -229,56 +312,21 @@
                         <p><i class="fa-regular fa-clock"></i> <strong>يومياً:</strong> 6:00 مساءً - 10:00 مساءً</p>
                         <p><i class="fa-regular fa-clock"></i> <strong>الجمعة:</strong> 2:00 ظهراً - 10:00 مساءً</p>
                     </div>
-                    <a href="#" class="btn btn-small">الموقع على الخريطة</a>
+                    <a href="https://maps.app.goo.gl/gGFso2xYtxJEmRyG6" class="btn btn-small" target="_blank">الموقع على
+                        الخريطة</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="about-wrapper">
-                <div class="about-image">
-                    <div class="image-wrapper dynamic-blob">
-                        <img src="assets/img-about.jpg" alt="دكتور مروان يعمل">
-                    </div>
-                </div>
-                <div class="about-text">
-                    <span class="subtitle">عن الطبيب</span>
-                    <h2>د. مروان عبدالكريم</h2>
-                    <p>طبيب فم وأسنان شغوف بتقديم أفضل رعاية صحية لمرضاه. خبرة واسعة في التشخيص والعلاج مع التركيز على
-                        راحة المريض النفسية والجسدية.</p>
-                    <ul class="certificates">
-                        <li><i class="fa-solid fa-certificate"></i> شهادات معتمدة في طب الأسنان</li>
-                        <li><i class="fa-solid fa-award"></i> خبرة عملية في مستشفيات جامعية</li>
-                        <li><i class="fa-solid fa-check-double"></i> استخدام أحدث التقنيات العلاجية</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">آراء المرضى</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"د / مروان عبدالكريم زكريا ما شاء الله اللهم بارك دكتور شاطر وايده تتلف ف حرير وعنده ضمير وده أهم شيء."</p>
-                    <h4 class="reviewer-name">- عبدالرحمن عبدالمحسن</h4>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"عيادة نظيفة ومعاملة راقية جداً من الدكتور مروان، شكراً."</p>
-                    <h4 class="reviewer-name">- محمد عادل</h4>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"تجربة ممتازة، الدكتور فاهم شغله كويس جداً وباله طويل."</p>
-                    <h4 class="reviewer-name">- خالد حسني</h4>
-                </div>
+    <!-- CTA Section -->
+    <section id="booking-cta" class="section">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">احجز موعدك الآن</h2>
+            <div class="hero-btns" style="justify-content: center; display: flex; gap: 20px;">
+                <a href="tel:+201151345884" class="btn btn-primary"><i class="fa-solid fa-phone"></i> اتصل الآن</a>
+                <a href="https://wa.me/+201151345884" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i>
+                    واتساب</a>
             </div>
         </div>
     </section>
@@ -298,16 +346,23 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 جميع الحقوق محفوظة لعيادة د. مروان.</p>
-                <p class="developer">تصميم وتطوير: <a href="https://ziadabdulkarim.github.io/Portfolio/">م. زياد عبدالكريم زكريا</a></p>
+                <p class="developer">تصميم وتطوير: <a href="https://ziadabdulkarim.github.io/Portfolio/">م. زياد
+                        عبدالكريم زكريا</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- Fixed CTA -->
-    <a href="tel:+201151345884" class="fixed-call-btn" title="اتصل الآن">
-        <i class="fa-solid fa-phone"></i>
-        <span>اتصل الآن</span>
-    </a>
+    <!-- Fixed Actions -->
+    <div class="fixed-actions">
+        <a href="https://wa.me/+201151345884" class="fixed-whatsapp-btn" title="تواصل عبر واتساب">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>واتساب</span>
+        </a>
+        <a href="tel:+201151345884" class="fixed-call-btn" title="اتصل الآن">
+            <i class="fa-solid fa-phone"></i>
+            <span>اتصل الآن</span>
+        </a>
+    </div>
 
     <script src="script.js"></script>
 </body>
